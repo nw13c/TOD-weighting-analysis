@@ -97,7 +97,7 @@ pt <- function(wd,rd){
 #attach the result (pom) to the origanl data
 tod_complete$pom <- pt(tod_complete$Weighted_total,tod_complete$total)
 
-######################### CREATE A GRAPH for SCORE COMPARISONS #####################################################
+######################### SCORE COMPARISONS SECTION #####################################################
 # breakdown the socres based on ages
 graph_data <- aggregate(cbind(total,Weighted_total,lms,pom) ~ Age, data = tod_complete, 
                         FUN = function(x) c(mean = mean(x)))
