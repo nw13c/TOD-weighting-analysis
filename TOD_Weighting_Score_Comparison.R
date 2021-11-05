@@ -97,8 +97,8 @@ pt <- function(wd,rd){
 #attach the result (pom) to the origanl data
 tod_complete$pom <- pt(tod_complete$Weighted_total,tod_complete$total)
 
-######################### SCORE COMPARISONS SECTION #####################################################
-# breakdown the socres based on ages
+######################### SCORE COMPARISONS GRAPH SECTION #####################################################
+# breakdown the scores based on ages
 graph_data <- aggregate(cbind(total,Weighted_total,lms,pom) ~ Age, data = tod_complete, 
                         FUN = function(x) c(mean = mean(x)))
 # find the maximum value among all scores
