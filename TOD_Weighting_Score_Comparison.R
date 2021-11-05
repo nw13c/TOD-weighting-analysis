@@ -35,8 +35,7 @@ census_values=list(Gender=list('male'=.48,'female'=.52),
 
 
 ############################## WEIGHTING CALCULATION SECTION #####################################################
-
-# Write a function to eching the matchness (of level names) between TOD data and census target data
+# Write a function to check the matchness (of level names) between TOD data and census target data
 reorder_list <- function(x, reference_data){
   new_list = list()
   data_levels = levels(reference_data)
