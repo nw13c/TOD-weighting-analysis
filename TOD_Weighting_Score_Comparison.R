@@ -7,8 +7,8 @@ tod_complete <- tod[complete.cases(tod),]
 # remove the cases for Gender = 3(others) and re-categorize the Ethnicity
 tod_complete <- tod_complete[tod_complete$Gender != 3,]
 tod_complete$Ethnicity <- ifelse(tod_complete$Ethnicity == 4 | 
-                                   tod_complete$Ethnicity == 5 | 
-                                   tod_complete$Ethnicity == 6, 4, 
+                                 tod_complete$Ethnicity == 5 | 
+                                 tod_complete$Ethnicity == 6, 4, 
                                  tod_complete$Ethnicity)
 # assign the desired variables names
 tod_complete$Gender <- ifelse(tod_complete$Gender == 1, "male", "female")
