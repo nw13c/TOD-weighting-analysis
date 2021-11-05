@@ -33,7 +33,6 @@ census_values=list(Gender=list('male'=.48,'female'=.52),
                    Ethnicity=list('hispanic'=.24, 'asian'=.04, 'black'=.14, 'white'=.52,'other'=.06),
                    region=list('northeast'=.16, 'south'=.38, 'midwest'=.22, 'west'=.24))
 
-
 ############################## WEIGHTING CALCULATION SECTION #####################################################
 # Write a function to check the matchness (of level names) between TOD data and census target data
 reorder_list <- function(x, reference_data){
@@ -43,7 +42,6 @@ reorder_list <- function(x, reference_data){
     new_list[[level]] = x[[level]]
   return(new_list)
 }
-
 # function for raking calculation 
 rake <- function(data, variable, census){
   weights = rep(1, nrow(data))
@@ -105,14 +103,12 @@ graph_data <- aggregate(cbind(total,Weighted_total,lms,pom) ~ Age, data = tod_co
                         FUN = function(x) c(mean = mean(x)))
 # find the maximum value among all scores
 g_range <- range(0, graph_data[,2], graph_data[,3],graph_data[,4],graph_data[,5])
-
 # plot the socres one by one 
 plot(graph_data[,2], type="o", col="blue", ylim=g_range, 
      axes=FALSE, ann=FALSE); box()
 lines(graph_data[,3], type="o", pch=22, lty=1, col="red")
 lines(graph_data[,4], type="o", pch=23, lty=2, col="forestgreen")
 lines(graph_data[,5], type="o", pch=24, lty=3, col="Black")
-
 # add other graph labels 
 label <- as.character(graph_data[,1])
 axis(1, at=1:length(label), lab=label)
