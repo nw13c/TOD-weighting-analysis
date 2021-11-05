@@ -115,7 +115,7 @@ axis(1, at=1:length(label), lab=label)
 axis(2, las=1, at=4*0:g_range[2])
 # add names of x-axis and y-axis and graph title
 title(xlab="Age"); title(ylab="Score")
-title(main="Socre comparisons (Unweight/Weighted/Linear/POM)", 
+title(main="Score comparisons (Unweight/Weighted/Linear/POM)", 
       col.main="black", font.main=2)
 # add the referecen line
 abline(h=44, col='coral2',lwd = 3)
