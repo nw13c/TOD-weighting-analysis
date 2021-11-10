@@ -26,7 +26,7 @@ input <- input %>%
   mutate(
     sege_sum_w_rescale = round((sege_sum_w / max(sege_sum_w)) * max(sege_sum)),
     # calculation for linear transformation
-    linear = sd(sege_sum)/sd(sege_sum_w) * sege_sum_w + (sege_sum - sd(sege_sum)/sd(sege_sum_w) * sege_sum_w)
+    linear = sd(sege_sum)/sd(sege_sum_w) * sege_sum_w + (mean (sege_sum) - sd(sege_sum)/sd(sege_sum_w) * mean(sege_sum_w))
     )
 # sege_sum_w_rescale is a variable that can be an input to cNORM to generate appropriate
 # raw-to-standard score lookup tables.
